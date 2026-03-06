@@ -1,4 +1,4 @@
-/* Centrar el contenido en el área principal */
+
 div.contenido {
   display: flex;
   justify-content: center;
