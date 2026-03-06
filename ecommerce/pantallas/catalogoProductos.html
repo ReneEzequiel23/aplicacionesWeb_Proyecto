@@ -1,103 +1,116 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Catálogo de Productos</title>
-    <link rel="stylesheet" href="/css/styles.css" />
-    <link rel="stylesheet" href="/css/catalogoPr.css" />
-  </head>
-  <body>
-    <div class="containPP">
-      <div id="containerPg" class="barraSuperior">
-        <nav>
-          <ul>
-            <li>
-              <div class="perfil">
-                <input type="image" src="/Img/perfil.png" alt="Perfil" />
-                <ul>
-                  <!-- Tengo que Arreglar Este Css por que Solo se Activa
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Catalogo de Productos</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="stylesheet" href="../css/stylesCatalogoProductos.css" />
+</head>
+
+<body>
+  <!-- Pagina Principal -->
+  <!-- Edgar Arturo Acevedo Acosta 245769
+          Rene Ezequiel Figueroa López 228691 -->
+  <div class="containPP">
+    <div id="containerPg" class="barraSuperior">
+      <nav>
+        <ul>
+          <li>
+            <div class="perfil">
+              <input type="image" src="../Img/perfil.png" alt="Perfil" />
+              <ul>
+                <!-- Tengo que Arreglar Este Css por que Solo se Activa
                      Cuando Tienes Presionado el Click en el Perfil 
                      y Aparece a la Izquierda xdddd-->
-                  <li><a href="/pantallas/perfilUsuario.html">Perfil</a></li>
-                  <li><a href="/pantallas/inicioDeSesion.html">Cerrar Sesión</a></li>
-                </ul>
+                <li><a href="../pantallas/perfilUsuario.html">Perfil</a></li>
+                <li><a href="../pantallas/inicioDeSesion.html">Cerrar Sesión</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div id="containerPg" class="menuLateral">
+      <div class="menu">
+        <ul>
+          <li class="page"><a href="../pantallas/index.html">Inicio</a></li>
+          <li class="page">
+            <a href="/pantallas/catalogoProductos.html">Catalogo de Productos</a>
+          </li>
+          <li class="page"><a href="../pantallas/carritoCompras.html">Carrito de Compras</a></li>
+          <li class="page"><a href="../pantallas/gestionPedidos.html">Gestión de Pedidos</a></li>
+          <li class="page"><a href="../pantallas/administrador.html">Administrador</a></li>
+          <li class="page"><a href="../pantallas/inicioDeSesion.html">Iniciar Sesión</a></li>
+        </ul>
+      </div>
+    </div>
+    <div id="containerPg" class="contenido">
+      <!-- Es el Unico que va a estar Cambiando por Pantalla-->
+      <div id="containerPg" class="contenido area-catalogo">
+
+        <div class="caja-filtros">
+
+          <form action="#" method="GET" class="formulario-filtros">
+
+            <div class="fila-filtro">
+              <label for="f-nombre">Nombre</label>
+              <input type="text" id="f-nombre" name="nombre" class="input-texto" />
+            </div>
+
+            <div class="fila-filtro medio">
+              <label for="f-precio">Precio</label>
+              <input type="checkbox" id="check-precio" class="input-check" />
+              <input type="number" id="f-precio" name="precio" placeholder="500.00" step="0.01"
+                class="input-texto corto" />
+            </div>
+
+            <div class="fila-filtro inferior">
+              <div class="radios">
+                <label>Mayor <input type="radio" name="rango" value="mayor" checked class="input-radio"></label>
+                <label>Menor <input type="radio" name="rango" value="menor" class="input-radio"></label>
               </div>
-            </li>
-          </ul>
-        </nav>
-      </div>
-      <div id="containerPg" class="menuLateral">
-        <div class="menu">
-          <ul>
-            <li class="page"><a href="/pantallas/index.html">Inicio</a></li>
-            <li class="page" id="CatalogoPro">
-              <a href="/pantallas/catalogoProductos.html">Catalogo de Productos</a>
-            </li>
-            <li class="page">
-              <a href="/pantallas/carritoCompras.html">Carrito de Compras</a>
-            </li>
-            <li class="page"><a href="/pantallas/gestionPedidos.html">Gestión de Pedidos</a></li>
-            <li class="page"><a href="/pantallas/administrador.html">Administrador</a></li>
-            <li class="page"><a href="/pantallas/iniciarSesion.html">Iniciar Sesión</a></li>
-          </ul>
-        </div>
-      </div>
-      <div id="containerPg" class="contenido">
-        <!-- Es el Unico que va a estar Cambiando por Pantalla-->
-        <div id="filtro">
-          <form action="" method="get">
-            <div class="filtEsp">
-              <label for="nombre">Nombre</label>
-              <input type="text" name="nombre" id="nombre" placeholder="Nombre del Libro" />
+              <button type="submit" class="btn-filtrar">Filtrar</button>
             </div>
-            <div class="filtEsp">
-              <label for="precio ">Rango de Precio</label>
-              <input type="number" name="precio" id="precio" placeholder="Rango de Precio" />
-            </div>
-            <div class="filtEsp">
-              <label for="rango">Que sea </label>
-              <select name="rango" id="rango">
-                <option value="mayor">Mayor</option>
-                <option value="menor">Menor</option>
-              </select>
-              <button type="submit">Filtrar</button>
-            </div>
+
           </form>
         </div>
-        <div class="tabla">
-          <table class="tablaCatalogo">
-            <tr>
-              <th>Nombre</th>
-              <th>Precio</th>
-              <th>Detalles</th>
-              <th>Acciones</th>
-            </tr>
-            <tr>
-              <td>Libro 1</td>
-              <td>$10.00</td>
-              <td><button class="detalles">Detalles</button></td>
-              <td>
-                <button class="agregarCarro">Añadir al Carrito</button>
-                <button class="crearReseña">Dejar Reseña</button>
-              </td>
-            </tr>
-            <tr>
-              <td>Libro 2</td>
-              <td>$15.00</td>
-              <td><button class="detalles">Detalles</button></td>
-              <td>
-                <button class="agregarCarro">Añadir al Carrito</button>
-                <button class="crearReseña">Dejar Reseña</button>
-              </td>
-            </tr>
+
+        <div class="caja-tabla">
+          <table class="tabla-productos">
+            <thead>
+              <tr>
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th>Detalles del Producto</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>ParamText</td>
+                <td>XXX.XX</td>
+                <td>
+                  <button type="button" class="btn-detalles"
+                    onclick="window.location.href='detallesDelProducto.html'">Detalles</button>
+                </td>
+                <td class="celda-acciones">
+                  <button type="button" class="btn-agregar">Agregar Carrito</button>
+                  <button type="button" class="btn-resena" onclick="window.location.href='crearReview.html'">Dejar
+                    Reseña</button>
+                </td>
+              </tr>
+            </tbody>
           </table>
         </div>
+
       </div>
 
       <div id="containerPg" class="piePagina">
         <h3 class="materia">Aplicaciones Web - Unidad 2</h3>
       </div>
     </div>
-  </body>
+</body>
+
 </html>
